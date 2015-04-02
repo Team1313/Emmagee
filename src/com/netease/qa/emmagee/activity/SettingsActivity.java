@@ -68,8 +68,8 @@ public class SettingsActivity extends Activity {
 		chkFloat = (CheckBox) findViewById(R.id.floating);
 		chkRoot = (CheckBox) findViewById(R.id.is_root);
 		tvTime = (TextView) findViewById(R.id.time);
-		about = (LinearLayout) findViewById(R.id.about);
-		mailSettings = (LinearLayout) findViewById(R.id.mail_settings);
+		about = (LinearLayout) findViewById(R.id.about); //找到about
+		mailSettings = (LinearLayout) findViewById(R.id.mail_settings); //找到mailsetting
 		SeekBar timeBar = (SeekBar) findViewById(R.id.timeline);
 		ImageView btnSave = (ImageView) findViewById(R.id.btn_set);
 		RelativeLayout floatingItem = (RelativeLayout) findViewById(R.id.floating_item);
@@ -120,7 +120,7 @@ public class SettingsActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				Intent intent = new Intent();
-				intent.setClass(SettingsActivity.this, MailSettingsActivity.class);
+				intent.setClass(SettingsActivity.this, MailSettingsActivity.class); //转向MailSettingsActivity
 				startActivity(intent);
 			}
 		});
@@ -129,7 +129,7 @@ public class SettingsActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				Intent intent = new Intent();
-				intent.setClass(SettingsActivity.this, AboutActivity.class);
+				intent.setClass(SettingsActivity.this, AboutActivity.class);	//转向AboutActivity
 				startActivity(intent);
 			}
 		});

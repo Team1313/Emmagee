@@ -80,7 +80,7 @@ public class MainPageActivity extends Activity {
 		Log.i(LOG_TAG, "MainActivity::onCreate");
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.mainpage);
+		setContentView(R.layout.mainpage);  //MainPageActivity在次设置
 		
 		initTitleLayout();
 		processInfo = new ProcessInfo();
@@ -145,7 +145,7 @@ public class MainPageActivity extends Activity {
 		layBtnSet.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				goToSettingsActivity();
+				goToSettingsActivity(); //设置setting按钮点击
 			}
 		});
 		receiver = new UpdateReceiver();
@@ -157,10 +157,10 @@ public class MainPageActivity extends Activity {
 	private void initTitleLayout() {
 		ivGoBack = (ImageView) findViewById(R.id.go_back);
 		nbTitle = (TextView) findViewById(R.id.nb_title);
-		ivBtnSet = (ImageView) findViewById(R.id.btn_set);
+		ivBtnSet = (ImageView) findViewById(R.id.btn_set); 
 		lstViProgramme = (ListView) findViewById(R.id.processList);
 		btnTest = (Button) findViewById(R.id.test);
-		layBtnSet = (LinearLayout) findViewById(R.id.lay_btn_set);
+		layBtnSet = (LinearLayout) findViewById(R.id.lay_btn_set); //找到setting按钮
 	}
 
 	/**
@@ -250,7 +250,7 @@ public class MainPageActivity extends Activity {
 
 	private void goToSettingsActivity() {
 		Intent intent = new Intent();
-		intent.setClass(MainPageActivity.this, SettingsActivity.class);
+		intent.setClass(MainPageActivity.this, SettingsActivity.class);	//转向SettingsActivity
 		startActivityForResult(intent, Activity.RESULT_FIRST_USER);
 	}
 
